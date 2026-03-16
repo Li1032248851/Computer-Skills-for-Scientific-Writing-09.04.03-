@@ -1,0 +1,32 @@
+\documentclass[10pt]{beamer}
+
+% 语言与字体配置
+\usepackage[russian]{babel}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\usetheme{Madrid}
+
+\begin{document}
+	
+	\section{Команда uncover}
+	
+	\begin{frame}{Использование \textbackslash uncover}
+		% \uncover<2-> 表示从第2步开始显示（直到这一帧结束）
+		\uncover<1->{Этот текст виден сразу (Шаг 1).}
+		
+		\vspace{1cm}
+		
+		\uncover<2->{Этот текст появляется на Шаге 2.}
+		
+		\vspace{1cm}
+		
+		\uncover<3>{Этот текст виден ТОЛЬКО на Шаге 3.}
+		
+		\vspace{1cm}
+		
+		\uncover<4->{Этот текст появляется на Шаге 4.}
+	\end{frame}
+	
+\end{document}

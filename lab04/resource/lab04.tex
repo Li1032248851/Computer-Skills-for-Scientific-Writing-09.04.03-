@@ -1,0 +1,80 @@
+\documentclass[a4paper, 12pt]{article} % 默认单栏
+% \documentclass[a4paper, 12pt, twocolumn]{article} % 练习要求测试 twocolumn 时的宽度表现
+
+% --- 预案部配置 ---
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{float}    % 提供 [H] 选项
+\usepackage{lipsum}   % 练习要求使用 lipsum 生成长文本测试浮动
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{image/}} 
+
+\begin{document}
+	
+	\section{Работа с графикой: Упражнения 4.9}
+	
+	% 实验 1: 测试 height, width, angle, scale
+	% Использование ключей width, angle и scale в команде \includegraphics для изменения размера и наклона рисунка.
+	\subsection{Параметры трансформации}
+	Ниже изображение с использованием различных ключей:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth, angle=30, scale=0.8]{test01}
+		\caption{Тест параметров width, angle и scale}
+	\end{figure}
+	
+	% 实验 2: textwidth vs linewidth (在单栏或双栏下对比)
+	% Сравнение textwidth (вся страница) и linewidth (текущая колонка) для адаптации графики под разметку.
+	\subsection{Относительная ширина (textwidth vs linewidth)}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{test01}
+		\caption{Изображение относительно textwidth}
+	\end{figure}
+	
+	\begin{itemize}
+		\item В одноколоночном документе \texttt{textwidth} и \texttt{linewidth} обычно совпадают.
+		\item В \texttt{twocolumn} или внутри списков \texttt{linewidth} будет соответствовать ширине колонки/текстового блока.
+	\end{itemize}
+	
+	% 实验 3: lipsum 与位置限定符 [htbp] 的交互
+	% Тестирование спецификаторов [htbp] вместе с пакетом lipsum для управления положением плавающих объектов в тексте.
+	\subsection{Размещение и lipsum}
+	\lipsum[1-3] % 生成长文本
+	
+	% 改变 [t], [b], [p] 来观察图片如何移动到页面顶部、底部或独立页面
+	% Мы наблюдали, как изображение перемещалось вверх, вниз или на отдельную страницу при изменении параметров.
+	\begin{figure}[t] 
+		\centering
+		\includegraphics[width=0.4\textwidth]{test01}
+		\caption{Плавок с использованием [t] (Top)}
+	\end{figure}
+	
+	\lipsum[4-6]
+	
+	% 实验 4: 标签位置实验 (label 在 caption 之前)
+	% Эксперимент с \label перед \caption, демонстрирующий сбой в нумерации ссылок при нарушении логики счетчиков.
+	\subsection{Эксперимент с метками (label before caption)}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.3\textwidth]{test01}
+		\label{fig:wrong_label} % 标签放在 caption 之前
+		\caption{Рисунок с неправильно расположенной меткой}
+	\end{figure}
+	
+	\textbf{Результат}: Ссылка на Рис.~\ref{fig:wrong_label} может указывать на номер раздела (3.4), а не на номер рисунка, так как счетчик обновляется командой \texttt{\\caption}.
+	
+	% 实验 5: 标签在环境之外
+	% Постановка \label вне окружения equation, что приводит к потере связи с формулой и некорректным ссылкам.
+	\subsection{Метка после окружения}
+	\begin{equation}
+		a^2 + b^2 = c^2
+	\end{equation}
+	\label{eq:outside} % 标签在 \end{equation} 之后
+	
+\textbf{Прогноз}: Ссылка на уравнение~\ref{eq:outside} будет некорректной, так как метка не «захватила» контекст окружения.
+
+\end{document}

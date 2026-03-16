@@ -1,0 +1,107 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{knuth1984}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ec08e6f01da5f3814f28a70c89c64656}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The TeXbook}
+      \field{year}{1984}
+    \endentry
+    \entry{lamport1986}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5d77435450d10a850a5b58577b9a456b}{%
+           family={Lamport},
+           familyi={L\bibinitperiod},
+           given={Leslie},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{fullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{fullhashraw}{5d77435450d10a850a5b58577b9a456b}
+      \strng{bibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorbibnamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authornamehash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorfullhash}{5d77435450d10a850a5b58577b9a456b}
+      \strng{authorfullhashraw}{5d77435450d10a850a5b58577b9a456b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{LaTeX User's Guide}
+      \field{title}{Document Preparation System}
+      \field{volume}{2}
+      \field{year}{1986}
+      \field{pages}{123\bibrangedash 145}
+      \range{pages}{23}
+    \endentry
+    \entry{ctan2026}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=bac1c8992a3fd1b06aa5ebbd0f76a027}{%
+           family={Team},
+           familyi={T\bibinitperiod},
+           given={CTAN},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{bac1c8992a3fd1b06aa5ebbd0f76a027}
+      \strng{fullhash}{bac1c8992a3fd1b06aa5ebbd0f76a027}
+      \strng{fullhashraw}{bac1c8992a3fd1b06aa5ebbd0f76a027}
+      \strng{bibnamehash}{bac1c8992a3fd1b06aa5ebbd0f76a027}
+      \strng{authorbibnamehash}{bac1c8992a3fd1b06aa5ebbd0f76a027}
+      \strng{authornamehash}{bac1c8992a3fd1b06aa5ebbd0f76a027}
+      \strng{authorfullhash}{bac1c8992a3fd1b06aa5ebbd0f76a027}
+      \strng{authorfullhashraw}{bac1c8992a3fd1b06aa5ebbd0f76a027}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Comprehensive TeX Archive Network}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://www.ctan.org
+      \endverb
+      \verb{url}
+      \verb https://www.ctan.org
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

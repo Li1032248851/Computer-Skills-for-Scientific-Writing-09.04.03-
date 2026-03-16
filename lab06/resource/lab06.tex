@@ -1,0 +1,36 @@
+\documentclass[a4paper, 12pt]{article}
+
+% --- 基础配置与俄语支持 ---
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% --- 练习要求: 配置 BibLaTeX ---
+% 使用 numeric 样式和 biber 后端
+\usepackage[style=numeric, backend=biber]{biblatex}
+\addbibresource{refs.bib} % 导入数据库
+
+\begin{document}
+	
+	\section{Работа с библиографией (Упражнение 6.9)}
+	
+	% --- 练习要求: 尝试不同的引用方式 ---
+	Как я узнал из классической книги \cite{knuth1984}, система TeX заложила основы верстки. 
+	Позже Лесли Лампорт \cite{lamport1986} разработал LaTeX для упрощения работы. 
+	Для поиска пакетов и документации я использую ресурс CTAN \cite{ctan2026}.
+	
+
+	try to add the cite that not exits\cite{test}
+	
+	\section{Процесс компиляции}
+	Для того чтобы ссылки отображались корректно, необходимо выполнить следующую последовательность команд:
+	\begin{enumerate}
+		\item \texttt{pdflatex lab06.tex} --- создание вспомогательных файлов.
+		\item \texttt{biber lab06} --- обработка библиографической базы.
+		\item \texttt{pdflatex lab06.tex} --- окончательная сборка со ссылками.
+	\end{enumerate}
+	
+	% --- 练习要求: 打印参考文献列表 ---
+	\printbibliography[title={Список литературы}]
+	
+\end{document}

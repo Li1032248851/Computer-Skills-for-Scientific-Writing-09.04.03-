@@ -1,0 +1,62 @@
+\documentclass[10pt]{beamer}
+
+% --- 删除或注释掉以下两行 ---
+% \usepackage[T2A]{fontenc} 
+% \usepackage[utf8]{inputenc}
+
+% --- 替换为以下配置 ---
+\usepackage[russian]{babel}
+\usepackage{fontspec}
+
+% 指定支持俄语的系统字体 (确保你电脑上有这些字体)
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usetheme{Madrid}
+
+\usecolortheme{default}
+
+% --- 文档信息 ---
+\title{Моя первая презентация в LaTeX}
+\subtitle{Изучение структуры Beamer}
+\author{Ли Хан}
+\institute{Российский Университет Дружбы Народов}
+\date{\today}
+
+\begin{document}
+	
+	% 1. 标题页 (Title Frame)
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% 2. 目录页 (Table of Contents)
+	\begin{frame}{Содержание}
+		\tableofcontents
+	\end{frame}
+	
+	\section{Введение}
+	% 3. 普通内容页
+	\begin{frame}{Цель работы}
+		В этом разделе мы изучаем структуру презентации:
+		\begin{itemize}
+			\item Использование класса \texttt{beamer}.
+			\item Создание отдельных кадров через \texttt{frame}.
+			\item Организация логических разделов через \texttt{section}.
+		\end{itemize}
+	\end{frame}
+	
+	\section{Основная часть}
+	% 4. 带有强调块的页面
+	\begin{frame}{Важные определения}
+		\begin{block}{Определение структуры}
+			Презентация состоит из последовательности окружений \texttt{frame}.
+		\end{block}
+		
+		\begin{alertblock}{Внимание!}
+			Каждая страница PDF соответствует одному состоянию кадра.
+		\end{alertblock}
+	\end{frame}
+	
+\end{document}

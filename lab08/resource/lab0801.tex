@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage[russian]{babel}
+\usepackage{fontspec}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+% 加载 TikZ 及其库
+\usepackage{tikz}
+\usetikzlibrary{graphs}
+
+\begin{document}
+	
+	\section{Упражнение 8.2.1: Сложный граф в TikZ}
+	
+	\begin{center}
+		\begin{tikzpicture}[
+			% 定义节点样式
+			
+			%пределение стилей (.style): В начале окружения заданы шаблоны greenNode (зеленая заливка) и doubleNode (двойная граница), 
+			%что позволяет не дублировать настройки для каждого узла.
+			greenNode/.style={circle, draw, fill=green, minimum size=0.8cm},
+			doubleNode/.style={circle, draw, double, double distance=1pt, minimum size=0.8cm}
+			]
+			% 1. 使用极坐标放置节点 (60度一个，半径3cm)
+			%Полярные координаты: Узлы расставлены с помощью синтаксиса (угол:радиус).
+			%Это позволило идеально распределить шесть точек по кругу с шагом $60^\circ$.
+			\node[greenNode] (A) at (90:3cm) {A};
+			\node[doubleNode] (B) at (150:3cm) {B};
+			\node[greenNode] (C) at (210:3cm) {C};
+			\node[doubleNode] (D) at (270:3cm) {D};
+			\node[greenNode] (E) at (330:3cm) {E};
+			\node[doubleNode] (F) at (30:3cm) {F};
+			
+			% 2. 绘制蓝色虚线并添加标签
+			%Пунктирные линии и метки: Команды draw[dotted] соединяют узлы B, D и F. Метки (6, 2, 4) размещены с помощью параметра midway, который автоматически находит центр линии.
+			\draw[blue, dotted, thick] (B) -- (F) node[midway, above] {6};
+			\draw[blue, dotted, thick] (B) -- (D) node[midway, left] {2};
+			\draw[blue, dotted, thick] (D) -- (F) node[midway, right] {4};
+			
+			% 3. 绘制红色曲线
+			%Кривые Безье и слои: Линия от A к D реализована через .. controls .., что создает плавный S-образный изгиб. Математический символ $\sqrt{2}$ помещен в узел с белым фоном (fill=white), чтобы "перекрыть" саму линию для лучшей читаемости.
+			%Изогнутые пути (bend): Для красных и синих дуг использован параметр to[bend left/right], который выгибает линию на заданный угол, не требуя ручного расчета координат.
+			\draw[red] (A) to[bend right=40] (B);
+			\draw[red] (A) to[bend left=40] (F);
+			\draw[red] (F) to[bend left=40] (E);
+			% A 到 D 的 S 形曲线
+			\draw[red] (A) .. controls +(left:2cm) and +(right:2cm) .. (D) 
+			node[pos=0.5, fill=white, inner sep=1pt] {$\sqrt{2}$};
+			
+			% 4. 绘制青蓝色实线曲线
+			\draw[cyan, thick] (B) to[bend right=30] (C);
+			\draw[cyan, thick] (C) to[bend right=30] (D);
+			
+		\end{tikzpicture}
+	\end{center}
+	
+\end{document}

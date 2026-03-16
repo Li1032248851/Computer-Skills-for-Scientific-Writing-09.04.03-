@@ -1,0 +1,33 @@
+\documentclass[10pt]{beamer}
+
+% 语言与字体配置 (支持俄语)
+\usepackage[russian]{babel}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usetheme{Madrid}
+
+\begin{document}
+	
+	\section{Динамические эффекты}
+	
+	% 练习点：在列表和段落中使用 \pause
+	\begin{frame}{Использование команды \textbackslash pause}
+		Это первый тезис, который видит аудитория.
+		\pause % 点击后显示下一行
+		
+		\begin{itemize}
+			\item Первый важный пункт. \pause
+			\item Второй пункт (появится после клика). \pause
+			\item Третий пункт (завершающий).
+		\end{itemize}
+		
+		\pause
+		\begin{block}{Вывод}
+			Команда \texttt{\textbackslash pause} позволяет управлять вниманием слушателей.
+		\end{block}
+	\end{frame}
+	
+\end{document}

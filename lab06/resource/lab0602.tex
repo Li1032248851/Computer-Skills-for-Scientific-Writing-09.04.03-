@@ -1,0 +1,37 @@
+\documentclass[a4paper, 12pt]{article}
+
+% 俄语支持
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% --- 核心：加载 natbib 宏包 ---
+% numbers 选项表示使用数字编号引用 [1]
+% round 选项表示使用圆括号 (1)
+\usepackage[numbers, round]{natbib}
+
+\begin{document}
+	
+	\section{Демонстрация Natbib}
+	
+	Согласно классическому труду \citet{knuth1984}, TeX является основой системы. 
+	Многие пользователи предпочитают LaTeX \citep{lamport1986} за его удобство.
+	
+	% \citet -> 显示为：Author (Year) [1]
+	% \citep -> 显示为：(Author, Year) [2]
+	
+	\section{Технический процесс}
+	Для работы с этим примером в TeXstudio:
+	\begin{enumerate}
+		\item Убедитесь, что в настройках (Build) выбран BibTeX (не Biber).
+		\item Нажмите F6 (PDFLaTeX).
+		\item Нажмите F8 (BibTeX).
+		\item Нажмите F6 еще два раза.
+	\end{enumerate}
+	
+	% --- 打印列表 ---
+	% 必须指定样式文件（例如 plainnat, unsrtnat）
+	\bibliographystyle{plainnat}
+	\bibliography{refs} % 引用 refs.bib，不要加后缀
+	
+\end{document}
